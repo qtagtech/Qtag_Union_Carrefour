@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Formerize Example</title>
+		<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="jquery.formerize-0.1.js"></script>
+		<style type="text/css">
+
+			/*
+				This is the only style you need to define. Form fields that are empty are
+				assigned the class "blank" to distinguish their labels from actual field text.
+			*/
+		
+			input.blank,textarea.blank {
+				color: #a0a0a0;
+				font-style: italic;
+			}
+
+			/*
+				Just for the example. You don't need any of these.
+			*/
+
+			body {
+				margin: 2em;
+				font-family: "Georgia", serif;
+			}
+
+			#foobar {
+				width: 750px;
+			}
+
+			#foobar textarea {
+				width: 97%;
+			}
+
+			#foobar input,textarea,select {
+				border: solid 1px #a0a0a0;
+				padding: 0.75em;
+				margin: 0.5em 0.5em 0.5em 0;
+			}
+			
+			#foobar fieldset {
+				padding: 1.5em;
+				margin: 0 0 1em 0;
+				border: solid 1px #a0a0a0;
+			}
+
+			#foobar fieldset input.checkbox {
+				display: block;
+				float: left;
+				margin: 0;
+				padding: 0;
+				border: 0;
+			}
+			
+			#foobar fieldset label {
+				margin: 0 0 1em 0;
+				padding-left: 1.5em;
+				display: block;
+			}
+			
+			#foobar fieldset label.last {
+				margin: 0;
+			}
+
+		</style>
+	</head>
+	<body>
+		<h1>Formerize Example</h1>
+		<form id="foobar" action="example.html" method="get">
+			<fieldset>
+				<input name="name" type="text" title="Name (required)" size="32" maxlength="64" value="" />
+				<input name="email" type="text" title="Email (required)" size="32" maxlength="64" value="" />
+				<br />
+				<textarea name="about" title="Tell us about yourself ..." rows="16"></textarea>
+			</fieldset>
+			<fieldset>
+				<input name="username" type="text" title="Username (required)" value="" />
+				<input name="password" type="password" title="Password (required)" value="" />
+				<select name="test2">
+					<option value="1">--- Choose a job ---</option>
+					<option value="2">Ninja</option>
+					<option value="3">Pirate</option>
+					<option value="4">Robot</option>
+				</select>
+			</fieldset>
+			<fieldset>
+				<input id="check1" name="check1" class="checkbox" type="checkbox" value="" />
+				<label for="check1">I pledge to defend against the coming zombie apolocalypse</label>
+				<input id="check2" name="check2" class="checkbox last" type="checkbox" value="" />
+				<label for="check2" class="last">I certify I am not a zombie</label>
+			</fieldset>
+			<fieldset>
+				<input type="submit" class="button" value="Submit" />
+				<input type="reset" class="button" value="Reset" />
+			</fieldset>
+		</form>
+		<script type="text/javascript">
+
+			$('#foobar').formerize();
+
+		</script>
+		<p>&copy; 2010 <a href="http://nodethirtythree.com/">nodethirtythree design</a>.</p>
+	</body>
+</html>
